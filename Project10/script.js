@@ -41,7 +41,7 @@ const createMeal = (meal) => {
   }
 
   //creating inner HTML items to display;
-  //using ternary operator to check if the properties is available;
+  //using ternary operator to check if the properties are available;
   const newInnerHTML = `
 		<div class="row">
 			<div class="col">
