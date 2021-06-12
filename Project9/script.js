@@ -12,8 +12,8 @@ if(window.localStorage.getItem("todos") == undefined){
         for (let t = 0; t < 5; t++) {
             todos.push(responseData[t].title)
         }        
-    })
-    window.localStorage.setItem("todos", JSON.stringify(todos));
+        window.localStorage.setItem("todos", JSON.stringify(todos))
+    })    
 }
 
 
