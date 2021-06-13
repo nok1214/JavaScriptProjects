@@ -14,7 +14,7 @@ if(window.localStorage.getItem("todos") == undefined){
         }        
         window.localStorage.setItem("todos", JSON.stringify(todos))
 
-        for (var v = 0 ; v < todos.length ; v++){
+        for (let v = 0 ; v < todos.length ; v++){
             new item(todos[v]);
         }
     })    
