@@ -5,14 +5,18 @@ const add = document.querySelector('.add');
 
 //storing custom list in users' browser using local storage
 if(window.localStorage.getItem("todos") == undefined){
-    var todos = [];
     axios.get('https://jsonplaceholder.typicode.com/todos')
     .then((response) => {
+        var todos = [];
         const responseData = response.data;
         for (let t = 0; t < 5; t++) {
             todos.push(responseData[t].title)
         }        
         window.localStorage.setItem("todos", JSON.stringify(todos))
+
+        for (var v = 0 ; v < todos.length ; v++){
+            new item(todos[v]);
+        }
     })    
 }
 
@@ -95,7 +99,5 @@ function check(){
 }
 
 
-for (var v = 0 ; v < todos.length ; v++){
-    new item(todos[v]);
-}
+
 
