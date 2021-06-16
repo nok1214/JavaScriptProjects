@@ -1,28 +1,26 @@
 const getRandomMealsButton = document.getElementById("getRandomMeals");
 const mealContainer = document.getElementById("mealContainer");
 
+//Creat a function to fetch data
+function getMyMeals() {
+  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+  .then((response) => response.json())
+  .then((response) => {
+    createMeal(response.meals[0]);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
+
 //add event listeners to window with 'load' method;
 window.addEventListener("load", () => {
-  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-    .then((response) => response.json())
-    .then((response) => {
-      createMeal(response.meals[0]);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  return getMyMeals();
 });
 
 //add event listeners to the generate random meals button with 'click' method;
 getRandomMealsButton.addEventListener("click", () => {
-  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-    .then((response) => response.json())
-    .then((response) => {
-      createMeal(response.meals[0]);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  return getMyMeals();
 });
 
 const createMeal = (meal) => {
