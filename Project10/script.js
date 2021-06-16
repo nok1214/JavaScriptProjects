@@ -15,12 +15,12 @@ function getMyMeals() {
 
 //add event listeners to window with 'load' method;
 window.addEventListener("load", () => {
-  return getMyMeals();
+  getMyMeals();
 });
 
 //add event listeners to the generate random meals button with 'click' method;
 getRandomMealsButton.addEventListener("click", () => {
-  return getMyMeals();
+  getMyMeals();
 });
 
 const createMeal = (meal) => {
